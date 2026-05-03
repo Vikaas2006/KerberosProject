@@ -9,8 +9,8 @@ import ActivityLog from './components/ActivityLog';
 import { AppState, LogEntry, AuthResponse, ServiceTicketResponse, ServiceAccessResponse } from './types/types';
 import { RefreshCw, BookOpen, Layers, Key, ShieldCheck } from 'lucide-react';
 
-// API base URL
-const API_BASE_URL = 'http://localhost:5000';
+// API base URL - Use environment variable or default to /api for Vercel deployment
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 const App: React.FC = () => {
   // Application state
