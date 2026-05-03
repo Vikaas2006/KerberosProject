@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #020617; /* Slate 950 */
+  color: #f1f5f9; /* Slate 100 */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #064E3B 0%, #065F46 50%, #047857 100%); /* Emerald gradient */
+}
+
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 20px rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  background: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+  backdrop-filter: blur(12px);
+}
+
+.card-shadow-gold {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 20px rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.gold-glow {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5), 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.badge {
+  @apply inline-flex items-center px-4 py-2 text-xs font-semibold rounded-full backdrop-blur-sm;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-success {
+  @apply badge bg-emerald-900/30 text-emerald-300;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.badge-error {
+  @apply badge bg-rose-900/30 text-rose-300;
+  border-color: rgba(244, 63, 94, 0.3);
+}
+
+.badge-info {
+  @apply badge bg-amber-900/30 text-amber-300;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.badge-warning {
+  @apply badge bg-yellow-900/30 text-yellow-300;
+  border-color: rgba(250, 204, 21, 0.3);
+}
+
+.pulse-border {
+  animation: pulse-emerald 2s infinite;
+  border: 2px solid #10B981;
+}
+
+@keyframes pulse-emerald {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3), inset 0 0 10px rgba(16, 185, 129, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.5), inset 0 0 10px rgba(16, 185, 129, 0.2);
+  }
+}
+
+.disabled-step {
+  @apply opacity-40 pointer-events-none filter grayscale;
+}
+
+.active-step {
+  @apply border-2;
+  border-color: #10B981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+/* Button styles */
+button {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input styles */
+input, textarea {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #10B981;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+  outline: none;
+}
